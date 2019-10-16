@@ -1,0 +1,35 @@
+* { margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+	height: 100%;
+	main { max-width: 90%; margin: 0 auto; height: calc(100% - 200px) }
+
+	h1 { color: white; text-align: center; font-size: 25px; background: #717171; padding: 25px;}
+
+	.container {
+		margin: 20px 0;
+		p { 
+			padding: 20px;
+			&.important { font-size: 20px; }
+		}
+		&.second { 
+			background: #e0e7ec;
+		}
+		&.action {
+			transition: box-shadow .3s ease; cursor: pointer;
+			&:hover { box-shadow: 0 0 5px 0 black; }
+		}
+	}
+
+	a { margin-top: 44px; display: block; }
+}
+
+//*************************************    SECCIÓN  Explicar    *************************************
+
+	// * Anidamiento - Elementos hijos
+	// * Clases hermanas
+	// * Eliminar & de .action y mostrar el resultado. 
+
+//************************************************************************************

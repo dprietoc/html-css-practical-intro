@@ -1,0 +1,97 @@
+// VARIABLES
+$char: c;
+
+// ******************
+
+
+* { margin: 0; padding: 0; }
+
+body {
+	h1 { color: white; 
+		font-weight: bold; 
+		text-align: center; 
+		text-shadow: 1px 1px 1px #505050; 
+		font-size: 25px; text-decoration: underline; background: #717171; padding: 25px;
+	}
+
+	div {
+		height: 20px;
+		margin: 10px;
+	}
+
+	p {
+		font-size: 30px; 
+	    @if $char == a {
+	      color: blue;
+	    } @else if $char == b {
+	      color: red;
+	    } @else if $char == c {
+	      color: green;
+	    } @else {
+	      color: black;
+	    }
+	}
+
+	@for $i from 1 through 3 {
+		$color: rgb($i*5+100, $i*80, $i+240);
+	   .item-#{$i} { 
+	  	   width: 100px * $i; 
+	  	   background: $color;
+	    }
+	}
+
+	@each $value in 1, 2, 3 {
+		$color: rgb($value*5+100, $value*80, $value+240);
+	   	.items-#{$value} { 
+	  	   width: 100px * $value; 
+	  	   background: $color;
+	    }
+	}
+
+	$cont: 1;
+	@while $cont <= 3 {
+		$color: rgb($cont*5+100, $cont*80, $cont+240);
+	   	.itemss-#{$cont} { 
+	  	   width: 100px * $cont; 
+	  	   background: $color;
+	    }
+	    $cont: $cont+1;
+	}
+}
+
+
+
+
+
+// _m-buttons.scss
+$buttons: (
+  error: (#c96363, #640b0b),
+  success: (#72bd6c, #174a13),
+	warning: (#ac9a4c, #6a5a13)
+);
+ 
+.m-button {
+  display: inline-block; padding: .5em; background: #ccc; color: #666;
+  
+  @each $name, $colors in $buttons {
+		@debug($name);
+    $bgcolor: nth($colors, 1);
+    $fontcolor: nth($colors, 2);
+     
+    &--#{$name} {
+      background-color: $bgcolor;
+      color: $fontcolor;
+    }  
+  }
+}
+
+	
+	//************************************************************************************
+
+//***********    SECCIÓN   Explicar   **************
+
+	// * Comenzar por if y cambiar valores de $char. (@if)
+	// * @for @each @while.
+	// * Explicar ejemplo.
+
+//************************************************************************************

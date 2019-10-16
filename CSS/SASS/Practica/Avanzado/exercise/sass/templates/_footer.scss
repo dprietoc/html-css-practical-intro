@@ -1,0 +1,11 @@
+footer { 
+    background-color: $dark; display: flex; align-items: center; padding: 50px 0; align-self: flex-end; color: $white;
+
+    >div ul { 
+        display: flex; flex-flow: row wrap; justify-content: space-between;
+        li { 
+            flex: 0 1 20%;
+            p { line-height: 30px; text-align: justify; }
+        }
+    }
+}

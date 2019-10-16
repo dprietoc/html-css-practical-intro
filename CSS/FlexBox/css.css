@@ -1,0 +1,52 @@
+* { margin: 0; padding: 0; }
+
+h1 { color: #D8D8D8; font-weight: bold; text-align: center; 
+	text-shadow: 1px 1px 1px #505050; font-size: 25px; 
+	text-decoration: underline; background: #676767; padding: 25px;
+}
+
+.container { 
+	width: 60%; min-height: 400px; background: rgba(0, 0, 0, 0.2); 
+	margin: 0 auto; display: flex; /*flex-direction: row;*/ /*flex-wrap: wrap; */
+	flex-flow: row wrap;
+	/*justify-content: space-around;*/
+	/*align-items: center;*/
+	/*align-content: stretch;*/
+}
+
+.base { height: 100px; text-align: center; line-height: 6; box-shadow: 0 0 15px -3px black;
+    background: #bdfddd;  flex: 0 1 200px;
+}
+
+.base:nth-child(1) { height: 120px; }
+.base:nth-child(2) { height: 80px; }
+.base:nth-child(3) { height: 130px; }
+.base:nth-child(4) { height: 160px; }
+
+
+hr { margin: 50px 0; }
+a { line-height: 50px; }
+
+
+/*.container { justify-content: center; align-items: baseline; }*/
+
+/*************************************    SECCIÓN  TEMAS    *************************************
+	* Display - Padre
+	* Flex-direction - Padre
+	* Flex-wrap - Padre
+	* Flex-flow - Padre  -- Sustituye a flex-direction flex-wrap
+	* Justify-content - Padre / Alinea los elementos en relación al eje principal.
+	* Align-items - Padre  / Alinea a cada item en relación al eje secundario de la fila.
+	* Align-content - Padre       / Alinea los elementos en relación al eje secundario, pero solo afecta cuando tiene multilíneas.
+	* Align-self - Hijo    / Alinea cada elemento.
+	* Order - Hijos
+	* Flex-grow - Hijo
+	* Flex-shrink Hijo   
+	* Flex-basis - Hijo -- Determina espacio a ocupar.	  	 
+//************************************************************************************
+
+//https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+//https://www.yunbitsoftware.com/blog/2017/03/30/flexbox-css3-tutorial-descripcion-ejemplos-html/
+
+//https://ed.team/blog/guia-definitiva-de-flexbox-2-flex-basis-flex-frow-flex-shrink

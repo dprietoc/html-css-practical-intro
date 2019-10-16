@@ -1,0 +1,39 @@
+/*p { color: red; font-weight: bold; }
+#id { color: black; }
+.clase { color: yellow; background: red; }*/
+
+/*Hermano*/
+/*3 */     /*#nico.uno { background: red; }*/
+/*1 */    /*.clase.uno { background: grey; }*/
+/*2*/   /* p.clase { color: green; }*/
+
+/*Hijo*/
+/*.contenido .clase { border: 1px solid red; }*/
+
+
+
+/*////////////////*/
+/*Selectores avanzados*/
+/*////////////////*/
+
+/*El próximo p que se encuentren inmediantamente luego de un div, que se encuentra en el mismo nivel es decir que no es un hijo.*/
+/*section + p { color: blue; background: grey; }div + p { color: blue; background: grey; }*/
+
+/*Todos los p que se encuentren inmediantamente luego de un div, que se encuentra en el mismo nivel es decir que no es un hijo.*/
+/*section ~ p { color: green; background: grey; }*/
+
+/*Todos los p que son hijos de div.*/
+/* section > p { color:  rgb(56, 56, 56); background: rgb(196, 196, 196); padding: 10px; } */
+
+
+/* [class*="clase"] { color: blue; font-weight: 600; } */
+
+/* p:hover { background: black; color: white;} */
+
+/* p:before { content: attr(newAttr);  } */
+
+/* p:before { content: ''; display: inline-block; width: 20px; height: 20px; background: rebeccapurple; margin-right: 10px; } */
+
+.card { max-width: 400px; padding: 15px; box-shadow: 0 0 15px -4px black; }
+hr { margin: 50px 0; }
+a { line-height: 50px; }

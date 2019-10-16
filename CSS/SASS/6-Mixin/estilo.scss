@@ -1,0 +1,104 @@
+* { margin: 0; padding: 0; }
+
+//*************************************    SECCIÓN  parámetros    *************************************
+
+// * descomentar para mostrar parámetros
+// * asignar valores por defecto a los parámetros
+
+@mixin set-w-h {
+	width: 40px; height: 40px;
+}
+
+// @mixin set-w-h($s1, $s2) {
+// 	width: #{$s1}px; height: #{$s2}px;
+// }	
+
+//************************************************************************************
+
+//*************************************    SECCIÓN  expresiones    *************************************
+
+@mixin add-border {
+	border: 2px solid red;
+	>div {
+		background: green;
+		@include set-w-h;
+		// @include set-w-h(20, 40);
+	}
+}
+
+//************************************************************************************
+
+@mixin conditional($value){
+	@if $value == 'a' {
+		border-radius: 5px; border-color: blue;
+	}@else if $value == 'b' {
+		border-radius: 20px;
+	}@else if $value == 'c' {
+		border-radius: 50px;
+	}
+}
+
+
+
+body {
+	h1 { color: white; 
+		font-weight: bold; 
+		text-align: center; 
+		text-shadow: 1px 1px 1px #505050; 
+		font-size: 25px; text-decoration: underline; background: #717171; padding: 25px;
+	}
+
+	.block {
+		background: black; width: 50px; height: 50px; margin: 10px; 
+		@include add-border;
+		&:nth-of-type(2) { @include conditional('a'); }
+		&:nth-of-type(3) { @include conditional('b'); }
+		&:nth-of-type(4) { @include conditional('c'); }
+
+	}
+	//generar llamado mediante extend. Crear una clase nueva.
+}
+
+// Map with much breakpoints
+$breakpoints: (
+    small: 320px,
+    medium: 600px,
+    large: 768px
+);
+ 
+// Respond-To Mixin
+@mixin mq($breakpoint) {
+	@debug(map-has-key($breakpoints, $breakpoint));
+
+    @if map-has-key($breakpoints, $breakpoint) {
+        $value: map-get($breakpoints, $breakpoint);
+         
+        @media screen and (min-width: $value) {
+            @content;
+        }
+    } @else {
+		@warn "Unknown `#{$breakpoint}` in $breakpoints";
+	} 
+}
+
+
+// Sass
+.mi-clase {
+	background-color: #f2f2f2;
+	 
+	@include mq(large) {
+		background-color: #666;
+	}
+}
+
+
+
+//*************************************    SECCIÓN  Ejemplo    *************************************
+
+	// * Comentar que los mixins pueden tener parámetros o no.
+	// * Explicar que los mixins ejecutan expresiones y pueden insertar propiedades al elemento de invocarlos. 
+	// * Los mixins pueden agregar estilos a los elementos hijos.
+	// * Mostrar con parámetros.
+	// * Asignarle valores a los parámetros.
+
+//************************************************************************************
